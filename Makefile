@@ -1,3 +1,5 @@
+default: build
+
 init: 
 	mkdir -p _output/bin
 
