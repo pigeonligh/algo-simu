@@ -1,7 +1,7 @@
 package algo
 
 type IAlgorithm interface {
-	Init() error
+	Init(args ...string) error
 	Solve() error
 	Result() string
 }

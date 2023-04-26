@@ -11,9 +11,13 @@ type newFn func(algo.Checker) (algo.IAlgorithm, error)
 
 var factory map[string]newFn
 
-func Register() {
+func init() {
 	factory = make(map[string]newFn)
-	factory["binarysearch"] = binarysearch.New
+	Register("binarysearch", binarysearch.New)
+}
+
+func Register(name string, fn newFn) {
+	factory[name] = fn
 }
 
 func New(kind string, checker algo.Checker) (algo.IAlgorithm, error) {

@@ -2,7 +2,6 @@ package binarysearch
 
 import (
 	"fmt"
-	"os"
 	"strconv"
 
 	"github.com/pigeonligh/algo-simu/algo"
@@ -16,12 +15,12 @@ type searcher struct {
 	max int
 }
 
-func (s *searcher) Init() error {
-	if len(os.Args) < 4 {
+func (s *searcher) Init(args ...string) error {
+	if len(args) < 2 {
 		return fmt.Errorf("please input min and max")
 	}
-	s.min, _ = strconv.Atoi(os.Args[2])
-	s.max, _ = strconv.Atoi(os.Args[3])
+	s.min, _ = strconv.Atoi(args[0])
+	s.max, _ = strconv.Atoi(args[1])
 	return nil
 }
 
