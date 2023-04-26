@@ -1,6 +1,8 @@
 #!/bin/bash
 
 function print_use {
+    echo "Use:"
+    echo "    ./run.sh --checker CHECKER CHECKER_ARGS --simu SIMU SIMU_ARGS"
     exit 1
 }
 
